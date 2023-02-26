@@ -63,7 +63,7 @@ class SinCiclo{
     }
 
     // Ejercicio 5, Dado un valor de compra presentar el total con iva incluido 
-    Presen_IVA(){
+    Psenre_IVA(){
         // Definicion de variables
         let Valor = 50;
         let Iva = 0.12;
@@ -100,6 +100,7 @@ class SinCiclo{
         console.log(`El vuelto a dar es ${Vuelto}`)
     }
 
+    // Ejercicio 22, Dado un numero invertirlo
     Invertir_Numero(){
         // Definicion de variables
         let num = 593;
@@ -223,28 +224,28 @@ class ConCiclo{
     // Ejercico 17, Realizar la multiplicar de dos numeros por medio de suma sucesiva
     Multiplicacion_Por_Suma(){
         // Definicion de variables
-        let num1 = 2;
-        let num2 = 3;
+        let num1 = Math.floor(Math.random()*10);
+        let num2 = Math.floor(Math.random()*10);
         let suma = 0;
         let i = 0;
         // Presentacion de la tabla de multiplicar de num
         for ( i = 0; i < num2; i++ ){
             suma = suma + num1;
         }
-        console.log(`La suma de los numeros es: ${suma}`);
+        console.log(`El numero ${num1} sumado ${num2} veces es: ${suma}`);
     }
 
     // Ejercicio 18, Realizar la division de dos numeros por medio de resta sucesiva
     Division_Por_Resta(){
         // Definicion de variables
-        let n1 = 15;
-        let n2 = 3;
+        let n1 = 30;
+        let n2 = 5;
         let cociente = 0;
         let resto = n1;
         
         // Operacion y presentacion de la division por resta
         while ( resto >= n2 ) {
-          resto -= n2;
+          resto = resto - n2;
           cociente++;
         }
         
@@ -254,8 +255,8 @@ class ConCiclo{
     // Ejercico 19, Calcular el factorial de un numero
     Calcular_Factorial(){
         // Definicion de variables
-        let numero = 5;
-        let factorial = 1;
+        let numero = Math.floor(Math.random()*10);
+        let factorial = Math.floor(Math.random()*10);
         let i = 0;
         // Presentacion del factorial de numero
         for ( i = 1; i <= numero; i++ ){
@@ -315,17 +316,17 @@ class ConCiclo{
     // Ejercicio 24, Presentar si un numero es perfecto o no
     Sacar_Numero_Perfecto(){
         // Definicion de variables
-        let numero = 6;
+        let numero = 20; // 28 496 8128 6
         let suma = 0;
         let i = 0;
         // Presentacion de si el numero es perfecto o no
-        for ( i = 1; i <= numero /2; i++ ){
+        for ( i = 1; i <= numero / 2; i++ ){
             if ( numero % i === 0 ){
                 suma = suma + i
             }
         }
 
-        if ( suma === numero && numero ){
+        if ( suma === numero ){
             console.log(`El numero ${numero} SI es perfecto`);
         }else{
             console.log(`El numero ${numero} NO es perfecto`);
@@ -351,6 +352,20 @@ class ConCiclo{
             console.log(`El numero ${numero} es primo`);
         }else{
             console.log(`El numero ${numero} no primo`);
+        }
+    }
+
+    // Ejercicio 10, Presentar los elementos de un arreglo que tenga menos de 5 caracteres
+    Sacar_Elementos_Arreglo(){
+        // Definicion de variables
+        let arreglo = ['413687','204863','12','8','5','75216','365789','8','3','0'];
+        let i = 0;
+
+        // Ciclo que recorre el arreglo y presenta los elementos con menos de 5 caracteres
+        for ( i = 0; i < 10; i++ ){
+            if ( arreglo[i].length < 5 ){
+                console.log(`El elemento ${arreglo[i]} tiene menos de 5 caracteres`);
+            }
         }
     }
 }
@@ -389,3 +404,4 @@ let Ciclos = new ConCiclo();
 // Ciclos.Calcular_Divisores()
 // Ciclos.Sacar_Numero_Perfecto()
 // Ciclos.Sacar_Numero_Primo()
+// Ciclos.Sacar_Elementos_Arreglo()
